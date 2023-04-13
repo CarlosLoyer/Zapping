@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  zapping:
+    image: zapping
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+      - 8000:8000
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "app.js"]

@@ -1,0 +1,60 @@
+<%- include('./partials/header') %>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<!-- Or if you want the latest version from the main branch -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+
+<section class="vh-100">
+  <div
+    class="d-flex flex-column py-2 px-4" style="background-color: #008FAD; position: absolute; width: 100%;">
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+        <div class="col col-sm-4 col-md-4 col-xs-6">
+          <img src="<%- logo %>" alt="Avestreaming" style="width:170px" class="d-none d-sm-block">
+          <img src="<%- logo_xs %>" alt="Avestreaming" style="width:39.09px" class="d-block d-sm-none">
+        </div>
+        <div class="col col-md-2 col-sm-2 col-xs-3 text-right">
+            <form action="/logout" method="GET">
+              <button type="submit" class="btn btn-primary">Cerrar Sesión</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid h-custom p-4 pt-5">
+    <h2 class="pt-4" style="color: white">Bienvenido <%- user %></h2>
+    <h7 style="color: white">Espero disfrutes el stream, ya que es el único que tenemos :v</h7>
+    <p style="color: rgb(114, 114, 114)"><small>Y se repetirá por siempre</small></p>
+    <div class="row pt-1">
+      <div class="col col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-6">
+        <div class="embed-responsive embed-responsive-16by9">
+          <video id="video" class="embed-responsive-item" allowfullscreen controls></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: #008FAD;">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Avestreaming © 2023. Todos los derechos reservados (la verdad, no).
+    </div>
+    <!-- Copyright -->
+  </div>
+</section>
+
+<script>
+  var video = document.getElementById('video');
+  var videoSrc = 'http://localhost:3000/hls/zapping.m3u8';
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    // video.play();
+  }else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+  }
+</script>
+
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  zapping:
+    image: zapping
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+      - 8000:8000
