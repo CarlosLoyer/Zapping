@@ -1,10 +1,10 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-TARGETDURATION:10
-#EXT-X-MEDIA-SEQUENCE:4
+#EXT-X-MEDIA-SEQUENCE:1
 #EXTINF:10
-../video/segment4.ts
+../video/segment1.ts
 #EXTINF:10
-../video/segment5.ts
+../video/segment2.ts
 #EXTINF:10
-../video/segment6.ts
+../video/segment3.ts

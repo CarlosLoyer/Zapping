@@ -1,16 +1,16 @@
 const db = {
   host: "aws.connect.psdb.cloud",
-  user: "unz6ozr5wjo1448talw2",
+  user: "epgi23lmqaen4zjaxct3",
   database: "zapping",
-  password: "pscale_pw_24hLLJgYE0pbxGIBmYHcuHdePtn7RMRxFwus607oQMz",
+  password: "pscale_pw_cSvg7aIDy10mZFWJVQE7vGQkeBa9e5Xq7JOfsuxXwHw",
   ssl: { rejectUnauthorized: false },
 };
 
 const dbArray = {
   host: "aws.connect.psdb.cloud",
-  user: "unz6ozr5wjo1448talw2",
+  user: "epgi23lmqaen4zjaxct3",
   database: "zapping",
-  password: "pscale_pw_24hLLJgYE0pbxGIBmYHcuHdePtn7RMRxFwus607oQMz",
+  password: "pscale_pw_cSvg7aIDy10mZFWJVQE7vGQkeBa9e5Xq7JOfsuxXwHw",
   ssl: { rejectUnauthorized: false },
   rowsAsArray: true,
 };
